@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi amor</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url('img/amar.png') no-repeat center center/cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1, h2,h3, p {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 8vw;
+            animation: fadeInOut 3s infinite; /* Animación suave */
+        }
+
+        h2 {
+            font-size: 4vw;
+            margin-top: 20px;
+            animation: pulse 2s infinite; /* Pequeño efecto de pulsación */
+        }
+
+        h3 {
+            font-size: 4vw;
+            margin-top: 15px;
+            animation: pulse 2s infinite; /* Pequeño efecto de pulsación */
+        }
+
+        p {
+            font-size: 2.5vw;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        button {
+            font-size: 3vw;
+            padding: 15px 30px;
+            margin-top: 30px;
+            border: none;
+            background-color: #ff3366;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 id="miAmorText"></h2>
+        <h2 id="deParaText"></h2>
+        <p> <h3>
+            En septiembre florecen los sueños, <br>
+            con el dorado brillo del amanecer, <br>
+            las flores amarillas traen esperanza, <br>
+            y un nuevo comienzo al renacer. <br><br>
+            Como el sol que acaricia la tierra, <br>
+            así tu iluminas mi andar, <br>
+            en cada pétalo te envío mi esencia, <br>
+            un lazo eterno en el viento al danzar.<br>
+            Te dejo este pequeño regalo<br> 
+            Da click en continuar<br> 
+        </h3>
+        </p>
+        <center> <button onclick="window.location.href='rosas.html'">Continuar☞💛</button></center>
+    </div>
+
+    <script>
+        // Función para obtener el parámetro de la URL
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Obtener los parámetros 'para' y 'de' de la URL
+        const para = getParameterByName('para');
+        const de = getParameterByName('de');
+
+        // Verificar si los parámetros existen y modificar el contenido de los textos
+        if (para) {
+            document.getElementById('miAmorText').textContent = `Para: ${para}`;
+        }
+        if (de) {
+            document.getElementById('deParaText').textContent = `De: ${de}`;
+        }
+
+    </script>
+</body>
+</html>
